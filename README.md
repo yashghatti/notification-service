@@ -2,7 +2,7 @@
 Slack notification service
 
 
-## Debug
+## Run/Debug
 
 Requires the following environment variables
 
