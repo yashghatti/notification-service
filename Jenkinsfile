@@ -13,10 +13,10 @@ pipeline {
                 sh 'sudo docker build -t notification-service --no-cache .'
             }
         }
-        stage('Docker Stop Existing') {
+        stage('Docker Stop Container') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    echo '==> Docker Stop Existing'
+                    echo '==> Stoppoing container'
                     sh 'sudo docker rm $(docker ps -aqf "name=notification-service") -f'
                 }    
             }
