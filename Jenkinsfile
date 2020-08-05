@@ -15,8 +15,10 @@ pipeline {
         }
         stage('Docker Stop Existing') {
             steps {
-                echo '==> Docker Stop Existing'
-                sh 'sudo docker rm $(docker ps -aqf "name=notification-service") -f'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    echo '==> Docker Stop Existing'
+                    sh 'sudo docker rm $(docker ps -aqf "name=notification-service") -f'
+                }    
             }
         }
     }
