@@ -5,8 +5,8 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo '==> Docker Build'
-                sh 'sudo docker run hello-world'
                 sh 'ls -a'
+                sh 'docker build -t notification-service --no-cache .'
             }
         }
         stage('Docker Deploy') {
