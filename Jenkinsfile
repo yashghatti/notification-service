@@ -10,13 +10,13 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo '==> Docker Build'
-                sh 'printenv'
                 sh 'sudo docker build -t notification-service --no-cache .'
             }
         }
-        stage('Docker Deploy') {
+        stage('Docker Stop Existing') {
             steps {
-                echo 'Deploying....'
+                echo '==> Docker Stop Existing'
+                sh 'sudo docker rm $(docker ps -aqf "name=notification-service") -f'
             }
         }
     }
