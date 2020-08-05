@@ -5,7 +5,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo '==> Docker Build'
-                sh 'docker run hello-world'
+                sh 'sudo docker run hello-world'
             }
         }
         stage('Docker Deploy') {
