@@ -24,7 +24,7 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Trigger Jenkins Job
-      uses: appleboy/jenkins-action@0.0.2
+      uses: appleboy/jenkins-action@master
       with:
         url: "http://24.72.122.198:8080"
         user: "github"
