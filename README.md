@@ -12,7 +12,7 @@ Requires the following environment variables
 
 > npm start
 
-## Jenkins Build
+## Build
 
 	docker build -t notification-service --no-cache .
 	docker rm $(docker ps -aqf "name=notification-service") -f
