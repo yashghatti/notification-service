@@ -17,7 +17,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     echo '==> Stoppoing container'
-                    sh 'sudo docker rm $(docker ps -aqf "name=notification-service") -f'
+                    sh 'sudo docker rm $(sudo docker ps -aqf "name=notification-service") -f'
                 }    
             }
         }
