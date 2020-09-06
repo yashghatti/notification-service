@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Docker Run Container') {
             steps {
-                sh 'sudo docker run -p 1111:8080 -e GS_SLACK_TOKEN=$GS_SLACK_TOKEN -e GS_SLACK_DIRECT_MESSAGE_ID=$GS_SLACK_DIRECT_MESSAGE_ID --name notification-service --detach notification-service'
+                sh 'sudo docker run -p 1111:8080 -e GS_SLACK_TOKEN=$GS_SLACK_TOKEN -e GS_SLACK_DIRECT_MESSAGE_ID=$GS_SLACK_DIRECT_MESSAGE_ID --name notification-service --restart=always --detach notification-service'
             }
         }    
     }
